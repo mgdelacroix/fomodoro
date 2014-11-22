@@ -1,0 +1,45 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 100%;
+}
+
+main {
+    text-align: center;
+    margin: 5px;
+}
+
+#timer {
+    font-size: 5em;
+}
+
+button {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5%;
+    margin: 2% 0;
+}
+
+#message {
+    position: absolute;
+    width: 90%;
+    top: 60px;
+    background-color: red;
+    padding: 5%;
+    border-radius: 5px;
+}
+
+#message::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.hidden {
+    display: none;
+}
