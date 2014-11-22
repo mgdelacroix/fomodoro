@@ -30,29 +30,42 @@
 }
 
 body {
-    font-size: 100%;
     font-family: 'nunitolight', Arial;
-    background-color: #4A03B5;
     color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #6930e5;
 }
 
 main {
     text-align: center;
-    margin: 5px;
+    padding: 3%;
+    background: #bc84f4;
+    background: -moz-linear-gradient(top, #bc84f4 0%, #6930e5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bc84f4), color-stop(100%,#6930e5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #bc84f4 0%,#6930e5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #bc84f4 0%,#6930e5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #bc84f4 0%,#6930e5 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #bc84f4 0%,#6930e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc84f4', endColorstr='#6930e5',GradientType=0 ); /* IE6-9 */
 }
 
 #timer {
     font-size: 5em;
     padding: 0;
-    margin: 23% 0 15% 0;
+    margin: 25% 0 15% 0;
 }
 
 button {
     width: 100%;
     border-radius: 5px;
+    font-family: 'nunitobold', Arial;
     outline: none;
     border: none;
     padding: 5%;
+    background-image: none;
     margin: 2% 0;
     color: white;
 }
@@ -73,7 +86,7 @@ button {
     position: absolute;
     width: 90%;
     top: 60px;
-    background-color: #D45FFF;
+    background-color: #FF389D;
     padding: 5%;
     border-radius: 5px;
 }
