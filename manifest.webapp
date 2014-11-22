@@ -1,6 +1,6 @@
 {
   "name": "Fomodoro",
-  "version": "1.1",
+  "version": "1.2",
   "description": "A pomodoro application for Firefox OS",
   "launch_path": "/index.html",
   "icons": {
@@ -10,7 +10,8 @@
     "128": "/icons/icon128x128.png"
   },
   "developer": {
-    "name": "Miguel de la Cruz"
+    "name": "Miguel de la Cruz",
+    "url": "http://github.com/mgdelacroix"
   },
   "permissions": {},
   "orientation": [
