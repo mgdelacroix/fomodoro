@@ -49,7 +49,7 @@ app.stopTimer = function() {
 
 app.setTimer = function() {
     var timer = app.getTimer();
-    var expected_timer = prompt("Write your expected time");
+    var expected_timer = prompt("Pomodoro time (in minutes)");
     timer.innerHTML = app.pad2(expected_timer) + ":00";
 };
 
@@ -59,11 +59,13 @@ app.getMessage = function() {
 
 app.setMessage = function(msg) {
     var message = app.getMessage();
+    message.className = "";
     message.innerHTML = msg;
 };
 
 app.clearMessage = function() {
     var message = app.getMessage();
+    message.className = "hidden";
     message.innerHTML = null;
 };
 
