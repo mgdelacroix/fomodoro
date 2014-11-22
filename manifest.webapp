@@ -11,5 +11,8 @@
   "developer": {
     "name": "Miguel de la Cruz"
   },
-  "permissions": {}
+  "permissions": {},
+  "orientation": [
+    "portrait"
+  ]
 }
