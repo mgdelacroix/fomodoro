@@ -49,8 +49,13 @@ app.stopTimer = function() {
 
 app.setTimer = function() {
     var timer = app.getTimer();
-    var expected_timer = prompt("Pomodoro time (in minutes)");
-    timer.innerHTML = app.pad2(expected_timer) + ":00";
+    var expected_timer = parseInt(window.prompt("Pomodoro time (in minutes)"));
+    console.log("Timer " + expected_timer);
+    if (isNaN(expected_timer)) {
+        window.alert("Please enter a number of minutes");
+    } else {
+        timer.innerHTML = app.pad2(expected_timer) + ":00";
+    }
 };
 
 app.getMessage = function() {
