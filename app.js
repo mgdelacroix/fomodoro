@@ -4,6 +4,14 @@ app.getTimer = function() {
     return document.getElementById("timer");
 };
 
+app.getStartButton = function() {
+    return document.getElementById("startTimer");
+};
+
+app.getResetButton = function() {
+    return document.getElementById("resetTimer");
+};
+
 app.getTimerMinutes = function() {
     var timer = app.getTimer().innerHTML,
         minutes = timer.split(":")[0];
@@ -35,6 +43,8 @@ app.startTimer = function() {
     app.cntdwn = countdown(processTimestamp,
                            finishTime,
                            countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+    app.clearMessage();
+    app.showResetButton();
 };
 
 app.updateTimer = function(minutes, seconds) {
@@ -45,6 +55,7 @@ app.updateTimer = function(minutes, seconds) {
 app.stopTimer = function() {
     window.clearInterval(app.cntdwn);
     app.setMessage("Pommodoro finished!");
+    app.showStartButton();
 };
 
 app.setTimer = function() {
@@ -52,10 +63,36 @@ app.setTimer = function() {
     var expected_timer = parseInt(window.prompt("Pomodoro time (in minutes)"));
     console.log("Timer " + expected_timer);
     if (isNaN(expected_timer)) {
-        window.alert("Please enter a number of minutes");
+        app.setMessage("Please enter a number of minutes");
     } else {
+        app.clearMessage();
         timer.innerHTML = app.pad2(expected_timer) + ":00";
     }
+};
+
+app.resetTimer = function() {
+    window.clearInterval(app.cntdwn);
+    app.setMessage("Pomodoro stopped!");
+
+    var timer = app.getTimer();
+    timer.innerHTML = app.pad2(25) + ":00";
+    app.showStartButton();
+};
+
+app.showResetButton = function() {
+    var startButton = app.getStartButton();
+    var resetButton = app.getResetButton();
+
+    startButton.className = "btn-start hidden";
+    resetButton.className = "btn-reset";
+};
+
+app.showStartButton = function() {
+    var startButton = app.getStartButton();
+    var resetButton = app.getResetButton();
+
+    startButton.className = "btn-start";
+    resetButton.className = "btn-reset hidden";
 };
 
 app.getMessage = function() {
@@ -93,3 +130,4 @@ var startTimer = document.getElementById("startTimer"),
 
 startTimer.onclick = app.startTimer;
 setTimer.onclick = app.setTimer;
+resetTimer.onclick = app.resetTimer;

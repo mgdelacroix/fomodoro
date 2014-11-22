@@ -43,6 +43,8 @@ main {
 
 #timer {
     font-size: 5em;
+    padding: 0;
+    margin: 23% 0 15% 0;
 }
 
 button {
@@ -61,6 +63,10 @@ button {
 
 .btn-set {
     background-color: #0CA8E8;
+}
+
+.btn-reset {
+    background-color: #FF389D;
 }
 
 #message {
